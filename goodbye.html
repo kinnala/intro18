@@ -1,0 +1,27 @@
+<canvas id=a>
+<script>
+c=a.getContext`2d`
+t=0
+</script>
+<script>
+b=200;
+a.style.position='fixed';
+a.style.top=0;
+a.style.left=0;
+a.style.background='radial-gradient(#004,#000)';
+a.style.cursor='none';
+S=(A=new AudioContext).createScriptProcessor();
+S.connect(A.destination);
+S.onaudioprocess=(e)=>{
+    if(t<180){
+    for(i=0;i-2048;)
+        t+=1/24000,T=t%1,H=t%0.25,e.outputBuffer.getChannelData(0)[i++]=.1*(Math.sin(b*T)+Math.sin(210*T))+.7*((t>32&&t<60)||(t>64&&t<92)||t>96)*Math.sin(4*b*T*2.7**(-T*4))*(t<176)+(t<160)*(t>60)*.2*Math.sin(8*b*H*2.7**(-H*20))+.2*Math.sin(3**((E=(t/4.)%4-4)*-4))*2**(-E%.125*30)*.00025*t*(t>95)*(t<176);
+    a.width=1920;
+    a.height=1080;
+    c.strokeStyle=c.fillStyle='hsl('+360+60*t*(t>72)+',50%,'+(37+60*(1-(T*=t>31)))+'%)';
+    for(i=0;i-10;)
+        c.beginPath(),H=5+10*2.7**((t-!(t>30)*30+0.5*i++)%5),d=1-H/(4*b),c.lineWidth=(5-4*(d*=d))*i,c.arc(5*b+300*Math.sin(t/5)*Math.max(d,.1),5*b/2+b*Math.sin(t/3+1.6)*Math.max(d,.1),H+3*(t>64)*(t-64),t/3+i,0.3+(t>60)*(t-60)/2+t/3+(t>96)*(-3*Math.sin(4*T)*t+96)+i),c.stroke();
+    if(t>90)
+        c.font = t-90+'px sans-serif',c.fillText('ASSEMBLY 2018'.substr(0,-t+144+13),5*b+300*Math.sin(t/5)-3.7*(t-90),5*b/2+b*Math.sin(t/3+1.6)),c.fillText('GOOD BYE'.substr(0,t-160),5*b+300*Math.sin(t/5)-3.7*(t-90)+100,5*b/2+b*Math.sin(t/3+1.6));}
+}
+</script>
